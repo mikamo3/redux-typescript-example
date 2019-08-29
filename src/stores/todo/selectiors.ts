@@ -5,4 +5,4 @@ function checkDone(state: Todo) {
 function checkUndone(state: Todo) {
   return !state.done;
 }
-export { checkDone, checkUndone };
+export default { checkDone, checkUndone };

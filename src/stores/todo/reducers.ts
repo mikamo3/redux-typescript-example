@@ -4,7 +4,7 @@ const initialState: TodoState = {
   todos: []
 };
 
-export function todoReducer(
+export default function todoReducer(
   state = initialState,
   action: TodoActionTypes
 ): TodoState {
