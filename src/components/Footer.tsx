@@ -1,17 +1,17 @@
 import React from "react";
-import { View, Button } from "react-native";
+import { View, Text } from "react-native";
+import FilterLink from "../containers/FilterLink";
+import { VisibilityFilterTypes } from "../state/ducks/todo/types";
 
-export interface DispatchProps {
-  onPressAll: () => void;
-  onPressCompleted: () => void;
-  onPressActive: () => void;
-}
-type Props = DispatchProps;
-const Footer: React.FC<Props> = props => (
-  <View>
-    <Button title="All" onPress={props.onPressAll} />
-    <Button title="Completed" onPress={props.onPressCompleted} />
-    <Button title="Active" onPress={props.onPressActive} />
+const Footer: React.FC = () => (
+  <View style={{ flexDirection: "row" }}>
+    <Text>Show: </Text>
+    <FilterLink filter={VisibilityFilterTypes.SHOW_ALL} title="All" />
+    <FilterLink filter={VisibilityFilterTypes.SHOW_ACTIVE} title="Active" />
+    <FilterLink
+      filter={VisibilityFilterTypes.SHOW_COMPLETED}
+      title="Completed"
+    />
   </View>
 );
 

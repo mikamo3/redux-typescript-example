@@ -13,7 +13,7 @@ export const getTodos = createSelector(
     return state;
   }
 );
-export const visibleTodoSelector = createSelector(
+export const getVisibleTodos = createSelector(
   [visibilityFilterSelector, todoSelector],
   (visibilityFilterSelector, todos) => {
     switch (visibilityFilterSelector) {

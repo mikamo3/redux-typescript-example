@@ -7,14 +7,23 @@
     "plugin:prettier/recommended",
     "prettier/@typescript-eslint"
   ],
-  "plugins": ["@typescript-eslint", "react", "jest"],
+  "plugins": ["@typescript-eslint", "react", "jest", "node"],
   "parser": "@typescript-eslint/parser",
   "env": { "browser": true, "node": true, "es6": true },
   "parserOptions": {
     "sourceType": "module"
   },
   "rules": {
-    "react/prop-types":"off",
-    "@typescript-eslint/explicit-function-return-type": "off"
+    "react/prop-types": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "node/no-missing-import": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "node": {
+      "tryExtensions": [".ts", ".tsx"]
+    }
   }
 }

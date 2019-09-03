@@ -2,9 +2,9 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 import configureStore from "./state/store";
 import { Provider } from "react-redux";
-import TodoInputFormContainer from "./containers/TodoInputFormContainer";
-import TodoListContainer from "./containers/TodoListContainer";
-import FooterContainer from "./containers/FooterContainer";
+import AddTodo from "./containers/AddTodo";
+import VisibleTodoList from "./containers/VisibleTodoList";
+import Footer from "./components/Footer";
 
 const store = configureStore();
 const styles = StyleSheet.create({
@@ -19,9 +19,9 @@ export default function App() {
   return (
     <Provider store={store}>
       <View style={styles.container}>
-        <TodoListContainer />
-        <TodoInputFormContainer />
-        <FooterContainer />
+        <AddTodo />
+        <VisibleTodoList />
+        <Footer />
       </View>
     </Provider>
   );

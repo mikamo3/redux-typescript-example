@@ -1,18 +1,17 @@
 import React from "react";
-import { types } from "../state/ducks/todo";
 import { Text } from "react-native";
-
 interface Props {
-  todo: types.Todo;
+  completed: boolean;
+  text: string;
   onPress: () => void;
 }
 
-const Todo: React.FC<Props> = ({ todo, onPress }) => (
+const Todo: React.FC<Props> = ({ completed, text, onPress }) => (
   <Text
-    style={{ textDecorationLine: todo.completed ? "line-through" : "none" }}
+    style={{ textDecorationLine: completed ? "line-through" : "none" }}
     onPress={onPress}
   >
-    {todo.text}
+    {text}
   </Text>
 );
 export default Todo;

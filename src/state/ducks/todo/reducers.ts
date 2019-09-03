@@ -2,7 +2,6 @@ import { TodoState, VisibilityFilterTypes, Todo } from "./types";
 import { ActionType, createReducer, getType } from "typesafe-actions";
 import * as actions from "./actions";
 import { combineReducers } from "redux";
-import cuid from "cuid";
 export const initialState: TodoState = {
   todos: [],
   filter: VisibilityFilterTypes.SHOW_ALL
@@ -11,7 +10,10 @@ export type TodoAction = ActionType<typeof actions>;
 
 const todos = createReducer<Todo[], TodoAction>(initialState.todos)
   .handleAction(actions.addTodo, (state, action) => {
-    return [...state, { id: cuid(), text: action.payload, completed: false }];
+    return [
+      ...state,
+      { id: state.length + 1, text: action.payload, completed: false }
+    ];
   })
   .handleAction(actions.toggleTodo, (state, action) => {
     return state.map(todo =>
@@ -34,7 +36,7 @@ const todoReducer = combineReducers<TodoState, TodoAction>({
       case getType(actions.addTodo):
         return [
           ...state,
-          { id: cuid(), text: action.payload, completed: false }
+          { id: state.length + 1, text: action.payload, completed: false }
         ];
       case getType(actions.toggleTodo):
         return state.map(todo =>

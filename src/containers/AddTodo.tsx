@@ -1,9 +1,9 @@
-import TodoInputForm, { DispatchProps } from "../components/TodoInputForm";
+import TodoInputForm from "../components/TodoInputForm";
 import { operations } from "../state/ducks/todo";
 import { Dispatch } from "redux";
 import { connect } from "react-redux";
-const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
-  onPressAdd: text => {
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  onPressAdd: (text: string) => {
     dispatch(operations.addTodo(text));
   }
 });

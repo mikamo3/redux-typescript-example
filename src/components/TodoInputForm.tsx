@@ -1,9 +1,8 @@
 import React from "react";
 import { View, TextInput, Button } from "react-native";
-export interface DispatchProps {
+export interface Props {
   onPressAdd: (text: string) => void;
 }
-type Props = DispatchProps;
 export default class TodoInputForm extends React.Component<Props> {
   state = {
     text: ""
