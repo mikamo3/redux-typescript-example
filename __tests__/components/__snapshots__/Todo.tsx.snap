@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot correct 1`] = `
+<Text
+  onPress={[Function]}
+  style={
+    Object {
+      "textDecorationLine": "line-through",
+    }
+  }
+>
+  hoge
+</Text>
+`;
