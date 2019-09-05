@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/named
 import { createSelector, Selector } from "reselect";
 import { TodoState, VisibilityFilterTypes, Todo } from "./types";
 
